@@ -63,7 +63,7 @@ char *dectohexa(unsigned int val)
 			reste += 48;
 		else
 			reste += 55;
-		val = val / 16;
+		val >>= 4;
 		cpt++;
 		hex[cpt] = reste;
 	}
@@ -108,7 +108,7 @@ char *dectobin_v2(unsigned int val)
 	for (i = 0; val > 0; i++)
 	{
 		tab[i] = val % 2;
-		val = val / 2;
+		val >>= 1;
 	}
 	for (i = i - 1; i >= 0; i--)
 	{
@@ -129,7 +129,7 @@ char *dectobin_v3(unsigned int val)
 	// while (range > 0)
 	// {
 	// 	bin[index--] = (val & range) ? 1 : 0;
-	// 	range = range >> 1;
+	// 	range >>= 1;
 	// }
 	// for (int i = INT_SIZE - 1; i >= 0; i--)
 	// {
