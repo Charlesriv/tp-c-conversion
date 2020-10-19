@@ -68,7 +68,7 @@ char *dectohexa(unsigned int val)
 	while (val != 0)
 	{
 		cpt++;
-		int reste = val % 16;
+		int reste = val & 0xF;
 		hex[cpt] = dictionnary[reste];
 		val >>= 4;
 	}
